@@ -3,24 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Sprites;
 
-public class EggScript : MonoBehaviour
+public class TableItems : MonoBehaviour
 {
     private Color startcolor;
 
-    public ItemHolder itemHolder;
+    public FollowMouser fm;
 
+    public bool isHovering;
+
+    public int numInArray;
     void OnMouseEnter()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            itemHolder.hold.Add(this.gameObject);
-            print("holder");
-        }
         startcolor = GetComponent<Renderer>().material.color;
         GetComponent<Renderer>().material.color = Color.gray;
+        isHovering = true;
+        fm.prefabNum = numInArray;
     }
     void OnMouseExit()
     {
         GetComponent<Renderer>().material.color = startcolor;
+        isHovering = false;
     }
 }

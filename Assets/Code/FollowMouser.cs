@@ -6,12 +6,15 @@ public class FollowMouser : MonoBehaviour
 {
     public bool holdingSomething = false;
 
-    public ItemHolder itemHolder;
+    public TableItems tableItems;
+
+    public GameObject[] prefabs;
+    public Transform spawnPoint;
+    public int prefabNum;
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     void Update()
@@ -25,5 +28,11 @@ public class FollowMouser : MonoBehaviour
         // Set the object's position to the mouse position
         transform.position = new Vector3(mousePos.x, mousePos.y, 0);
 
+
+        //CAN SPAWN WHEN HOVER ANNNNYYYYYYY ITEM!!!!!
+        if (Input.GetKeyDown(KeyCode.Mouse0) && tableItems.isHovering == true)
+        {
+            Instantiate(prefabs[prefabNum], spawnPoint.position, Quaternion.identity);
+        }
     }
 }
