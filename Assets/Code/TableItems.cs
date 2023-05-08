@@ -9,19 +9,17 @@ public class TableItems : MonoBehaviour
 
     public FollowMouser fm;
 
-    public bool isHovering;
-
     public int numInArray;
     void OnMouseEnter()
     {
         startcolor = GetComponent<Renderer>().material.color;
         GetComponent<Renderer>().material.color = Color.gray;
-        isHovering = true;
+        fm.isHovering = true;
         fm.prefabNum = numInArray;
     }
     void OnMouseExit()
     {
         GetComponent<Renderer>().material.color = startcolor;
-        isHovering = false;
+        fm.isHovering = false;
     }
 }
