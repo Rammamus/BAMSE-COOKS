@@ -15,7 +15,10 @@ public class TableItems : MonoBehaviour
         startcolor = GetComponent<Renderer>().material.color;
         GetComponent<Renderer>().material.color = Color.gray;
         fm.isHovering = true;
-        fm.prefabNum = numInArray;
+        if (fm.holdingSomething == false)
+        {
+            fm.prefabNum = numInArray;
+        }
     }
     void OnMouseExit()
     {

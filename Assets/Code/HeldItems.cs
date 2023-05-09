@@ -5,11 +5,13 @@ using UnityEngine;
 public class HeldItems : MonoBehaviour
 {
     public FollowMouser fm;
+    public BowlScript bs;
 
     // Start is called before the first frame update
     void Start()
     {
         fm = FindObjectOfType<FollowMouser>();
+        bs = FindObjectOfType<BowlScript>();
     }
 
     // Update is called once per frame
@@ -26,6 +28,13 @@ public class HeldItems : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
+            Destroy(this.gameObject);
+            fm.holdingSomething = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse0) && bs.canAdd)
+        {
+
             Destroy(this.gameObject);
             fm.holdingSomething = false;
         }
