@@ -156,6 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canAdd: 0
   recipNum: 0
+  fm: {fileID: 0}
   flourAmount: 0
   flourMax: 0
   eggAmount: 0
@@ -165,7 +166,10 @@ MonoBehaviour:
   honeyAmount: 0
   honeyMax: 0
   recipe:
-  - {fileID: 88988535}
+  - {fileID: 648542316}
+  - {fileID: 1564998027}
+  - {fileID: 250596873}
+  - {fileID: 181307611}
 --- !u!61 &42030482
 BoxCollider2D:
   m_ObjectHideFlags: 0

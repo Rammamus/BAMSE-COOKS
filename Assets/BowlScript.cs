@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class BowlScript : MonoBehaviour
 {
+    private Color startcolor;
+
     public bool canAdd = false;
 
     public int recipNum;
 
+    public FollowMouser fm;
 
     //idk make shit get added accordingly
 
@@ -44,10 +47,16 @@ public class BowlScript : MonoBehaviour
     private void OnMouseOver()
     {
         canAdd = true;
+        if (fm.holdingSomething)
+        {
+            startcolor = GetComponent<Renderer>().material.color;
+            GetComponent<Renderer>().material.color = Color.gray;
+        }
     }
 
     private void OnMouseExit()
     {
         canAdd = false;
+        GetComponent<Renderer>().material.color = startcolor;
     }
 }

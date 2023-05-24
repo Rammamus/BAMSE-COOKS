@@ -6,12 +6,14 @@ public class HeldItems : MonoBehaviour
 {
     public FollowMouser fm;
     public BowlScript bs;
+    public TableItems ti;
 
     // Start is called before the first frame update
     void Start()
     {
         fm = FindObjectOfType<FollowMouser>();
         bs = FindObjectOfType<BowlScript>();
+        ti = FindObjectOfType<TableItems>();
     }
 
     // Update is called once per frame
@@ -34,7 +36,7 @@ public class HeldItems : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && bs.canAdd)
         {
-
+            bs.recipe.Remove(ti.numInArray);
             Destroy(this.gameObject);
             fm.holdingSomething = false;
         }
